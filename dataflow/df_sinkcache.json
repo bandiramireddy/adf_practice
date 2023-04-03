@@ -27,6 +27,9 @@
 			"transformations": [
 				{
 					"name": "derivedColumn1"
+				},
+				{
+					"name": "select1"
 				}
 			],
 			"scriptLines": [
@@ -61,6 +64,19 @@
 				"     ignoreNoFilesFound: false) ~> source2",
 				"source2 derive({2} = ERROR_FUNCTION(''),",
 				"          each(match(), ERROR_FUNCTION('') = ERROR_FUNCTION(''))) ~> derivedColumn1",
+				"derivedColumn1 select(mapColumn(",
+				"          Column_1,",
+				"          Column_2,",
+				"          Column_3,",
+				"          Column_4,",
+				"          Column_5,",
+				"          Column_6,",
+				"          Column_7,",
+				"          Column_8,",
+				"          {2}",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
 				"source1 sink(validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
