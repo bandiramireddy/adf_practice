@@ -19,11 +19,7 @@
 						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					},
-					"fieldList": [
-						"itemName",
-						"itemType",
-						"lastModified"
-					],
+					"fieldList": [],
 					"storeSettings": {
 						"type": "AzureBlobFSReadSettings",
 						"enablePartitionDiscovery": false
